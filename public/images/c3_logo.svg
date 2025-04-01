@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg18"
+   width="200"
+   height="200"
+   viewBox="0 0 200 200"
+   sodipodi:docname="c3_logo"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs22" />
+  <sodipodi:namedview
+     id="namedview20"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     showguides="true"
+     inkscape:zoom="4.065"
+     inkscape:cx="114.88315"
+     inkscape:cy="100"
+     inkscape:window-width="1850"
+     inkscape:window-height="1016"
+     inkscape:window-x="363"
+     inkscape:window-y="1467"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g24">
+    <sodipodi:guide
+       position="115.44994,191"
+       orientation="0,-1"
+       id="guide1222"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="23,159.16359"
+       orientation="1,0"
+       id="guide1243"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="117.02658,36.55078"
+       orientation="0,-1"
+       id="guide1245"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <g
+     inkscape:groupmode="layer"
+     inkscape:label="Image"
+     id="g24">
+    <rect
+       style="opacity:1;fill:#000000;fill-opacity:0.99702;stroke:none;stroke-width:1;stroke-dasharray:none"
+       id="rect1299"
+       width="155"
+       height="155"
+       x="23"
+       y="9" />
+    <path
+       style="fill:none"
+       d="M 23.666667,163.33333 23,162.66667 V 85.833333 9 h 46.224972 46.224968 l -7.45639,7.506491 -7.45639,7.50649 15.46932,15.49351 L 131.4758,55 116,70.5 100.5242,86 116,101.5 131.4758,117 116.2379,132.26173 101,147.52346 v 0.96475 0.96476 l 7.22497,7.27351 L 115.44994,164 H 69.891639 24.333333 Z"
+       id="path345" />
+    <g
+       id="g1241"
+       style="mix-blend-mode:normal;fill:#ffffff;fill-opacity:1;stroke:none;opacity:1"
+       transform="translate(-0.14725,0.06445)">
+      <path
+         id="rect557"
+         style="opacity:0.4;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.31377"
+         d="m 88.718423,-32.506196 -0.0014,65.687734 H 154.40616 V 10.554121 h -43.0617 l 0.001,-43.060317 z"
+         transform="rotate(45)" />
+      <path
+         id="path1118"
+         style="opacity:0.4;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.31377"
+         d="m 117.17383,9.5917969 -16,16.0000001 30.44922,30.447265 -14.44922,14.449219 -16,16 16,15.999999 14.44922,14.44727 -30.44922,30.44922 16,16 46.44922,-46.44922 -30.44922,-30.447269 30.44922,-30.449219 z" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:22.2045px;line-height:1.25;font-family:sans-serif;stroke-width:0.925188"
+       x="25.699196"
+       y="168.92"
+       id="text1355"
+       transform="scale(0.87462907,1.1433418)"><tspan
+         sodipodi:role="line"
+         id="tspan1353"
+         x="25.699196"
+         y="168.92"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24.6717px;font-family:'URW Gothic';-inkscape-font-specification:'URW Gothic, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.925188">CIFP CARLOS III</tspan></text>
+  </g>
+</svg>
