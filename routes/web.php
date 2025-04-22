@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\PruebaController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\ParticipanteController;
 use App\Http\Controllers\Admin\EdicionController;
+use App\Http\Controllers\SessionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,11 @@ Route::get('/', function () {
 })->name('home');
 
 Route::post('/inscripcion', [InscripcionesController::class, 'store'])->name('inscripcion');
+
+Route::prefix('sessions')->group(function () {
+    Route::post('setEdicion', [SessionController::class, 'setEdicion'])->name('sessions.setEdicion');
+});
+
 
 Route::prefix('/dashboard')->middleware(['auth', 'verified'])->group(function () {
     Route::get('/', function () {

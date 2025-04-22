@@ -16,6 +16,7 @@
                 </ul>
             </nav>
             <footer>
+                <x-select-edicion />
                 <ul class="icons">
                     <li><a href="https://twitter.com/cifpcarlos3" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
                     <li><a href="https://es-es.facebook.com/cifpcarlos3/" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
