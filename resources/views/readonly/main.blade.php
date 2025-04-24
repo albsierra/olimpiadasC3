@@ -32,7 +32,14 @@
                         <section id="inscripciones">
                             <div class="container">
                                 <h3>Inscripciones</h3>
-                                @include('partials.inscripciones.inscripcion_form')
+                                @can('store-inscripcion')
+                                    @include('partials.inscripciones.inscripcion_form')
+                                @else()
+                                    <p>Las inscripciones están cerradas.</p>
+                                    @if (session('edicion'))
+                                        <p>Se abrirán entre el {{ session('edicion')->fecha_apertura }} y el {{ session('edicion')->fecha_cierre }}.</p>
+                                    @endif
+                                @endcan
                             </div>
                         </section>
 
