@@ -13,6 +13,10 @@
         <meta name="author" content="CIFP Carlos III" />
         <meta lang="es" />
 		<link rel="stylesheet" href="{{ asset('/ediciones/edicion2025/main.css') }}" />
+
+        <!-- Carrusel patrocinadores CSS -->
+        <link rel="stylesheet" type="text/css" href="{{ asset('/slick/slick.css') }}"/>
+        <link rel="stylesheet" type="text/css" href="{{ asset('/slick/slick-theme.css') }}"/>
 	</head>
 	<body class="is-preload">
         <!-- Header -->
@@ -35,5 +39,8 @@
 			<script src="{{ asset('/readonly/assets/js/main.js') }}"></script>
 			<script src="{{ asset('/inscripciones.js') }}"></script>
             <script src="https://kit.fontawesome.com/c627327887.js" crossorigin="anonymous"></script>
+            <!-- Carrusel patrocinadores JS -->
+            <script src="{{ asset('/slick/slick.min.js') }}"></script>
+            <script src="{{ asset('/slick/settings.js') }}"></script>
 	</body>
 </html>

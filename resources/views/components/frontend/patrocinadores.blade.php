@@ -2,7 +2,7 @@
     <h3>Patrocinadores</h3>
     <p>El CIFP Carlos III y todos los participantes en la Olimpiada Informática
         agradecen la colaboración de:</p>
-    <div class="features">
+    <div class="features carousel">
         @foreach ($patrocinadores as $patrocinador)
             <article>
                 <a href="{{ $patrocinador->url ?? '' }}" target="_blank" rel="noopener noreferrer">
