@@ -45,13 +45,7 @@
 
                     <!-- Four -->
                         <section id="resultados">
-                            <div class="container">
-                                <h3>Resultados</h3>
-
-                                <section>
-                                    <p>En este apartado irán apareciendo los resultados de las distintas categorías</p>
-                                </section>
-                            </div>
+                            <x-frontend.resultados />
                         </section>
 
                         <!-- Five -->
