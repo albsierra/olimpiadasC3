@@ -28,7 +28,10 @@ class ResultadoController extends Controller
             $resultado = $edicion->resultados;
             return !($resultado);
         });
-        return view('admin.resultados.create', compact('ediciones'));
+
+        $palmaresEsqueleto = \App\Models\Resultado::getPalmaresEsqueleto(); // Generar el contenido inicial
+
+        return view('admin.resultados.create', compact('ediciones', 'palmaresEsqueleto'));
     }
 
     /**
@@ -37,7 +40,7 @@ class ResultadoController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'id' => 'required|exists:ediciones,id',
+            'id' => 'required|exists:ediciones,id|unique:resultados,id',
             'palmares' => 'required|string',
         ]);
         Resultado::create([
