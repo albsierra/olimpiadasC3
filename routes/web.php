@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\PruebaController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\ParticipanteController;
 use App\Http\Controllers\Admin\EdicionController;
+use App\Http\Controllers\Admin\ResultadoController;
 use App\Http\Controllers\SessionController;
 
 /*
@@ -45,6 +46,7 @@ Route::prefix('/dashboard')->middleware(['auth', 'verified'])->group(function ()
     Route::resource('ciclos', CicloController::class);
     Route::resource('ediciones', EdicionController::class)
         ->parameters(['ediciones' => 'edicion']);
+    Route::resource('resultados', ResultadoController::class);
     Route::resource('grados', GradoController::class);
     Route::resource('grupos', GrupoController::class);
     Route::resource('patrocinadores', PatrocinadorController::class)
