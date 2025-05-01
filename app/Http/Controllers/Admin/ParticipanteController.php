@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
+use App\Models\Grupo;
 use App\Models\Participante;
 use Illuminate\Http\Request;
 
@@ -30,7 +31,8 @@ class ParticipanteController extends Controller
 
     public function create()
     {
-        return view('admin.participantes.create');
+        $grupos = Grupo::all();
+        return view('admin.participantes.create')->with('grupos', $grupos);
     }
 
     /**
@@ -39,11 +41,14 @@ class ParticipanteController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'grupo' => 'required|exists:grupos,id',
             'nombre' => 'required|max:100',
         ]);
 
         Participante::create([
+            'grupo_id' => $request->grupo,
             'nombre' => $request->nombre,
+            'apellidos' => $request->apellidos,
         ]);
 
         return redirect()->route('participantes.index')->with('success', 'Participante creado correctamente.');
@@ -55,7 +60,8 @@ class ParticipanteController extends Controller
 
     public function edit(Participante $participante)
     {
-        return view('admin.participantes.edit', compact('participante'));
+        $grupos = Grupo::all();
+        return view('admin.participantes.edit', compact('participante', 'grupos'));
     }
     /**
      * Update the specified resource in storage.
@@ -63,10 +69,13 @@ class ParticipanteController extends Controller
 
     public function update(Request $request, Participante $participante){
         $request->validate([
+            'grupo' => 'required|exists:grupos,id',
             'nombre' => 'required|max:100',
         ]);
 
+        $participante->grupo_id = $request->grupo;
         $participante->nombre = $request->nombre;
+        $participante->apellidos = $request->apellidos;
         $participante->save();
 
         return redirect()->route('participantes.index')->with('success', 'Participante actualizado correctamente.');
