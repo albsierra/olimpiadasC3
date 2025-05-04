@@ -14,14 +14,8 @@
                         @csrf
                         @method('PUT')
                         <div class="mb-4">
-                            <label for="grupo">Grupo:</label>
-                            <select id="grupo" name="grupo">
-                                @foreach ($grupos as $grupo)
-                                    <option value="{{ $grupo->id }}" {{ (old('grupo') == $grupo->id || $participante->grupo->id == $grupo->id) ? 'selected' : '' }}>
-                                        {{ $grupo->nombre }}
-                                    </option>
-                                @endforeach
-                            </select>
+                            <label for="grupo">Grupo: {{ $grupo->nombre }}</label>
+                            <input type="hidden" name="grupo_id" id="grupo_id" value="{{ $grupo->id }}">
                         </div>
                         <div class="mb-4">
                             <label for="nombre" class="block text-gray-700">Nombre</label>

@@ -40,7 +40,10 @@
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
                                         </form>
-                                        <a href="{{ route('participantes.index') }}" class="btn btn-sm btn-warning">Volver al listado</a>
+                                        <a href="{{ route('grupos.participantes.index', ['grupo' => $participante->grupo]) }}"
+                                             class="btn btn-sm btn-warning">
+                                             Volver al listado
+                                        </a>
                                     </td>
                                 </tr>
                         </tbody>

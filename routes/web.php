@@ -52,7 +52,7 @@ Route::prefix('/dashboard')->middleware(['auth', 'verified'])->group(function ()
     Route::resource('patrocinadores', PatrocinadorController::class)
         ->parameters(['patrocinadores' => 'patrocinador']);
     Route::resource('pruebas', PruebaController::class);
-    Route::resource('participantes', ParticipanteController::class);
+    Route::resource('grupos.participantes', ParticipanteController::class)->shallow();
 });
 
 Route::middleware('auth')->group(function () {

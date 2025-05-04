@@ -10,17 +10,11 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     @include('partials.alerts')
-                    <form action="{{ route('participantes.store') }}" method="POST">
+                    <form action="{{ route('grupos.participantes.store', ['grupo' => $grupo]) }}" method="POST">
                         @csrf
                         <div class="mb-4">
-                            <label for="grupo">Grupo:</label>
-                            <select id="grupo" name="grupo">
-                                @foreach ($grupos as $grupo)
-                                    <option value="{{ $grupo->id }}" {{ old('grupo') == $grupo->id ? 'selected' : '' }}>
-                                        {{ $grupo->nombre }}
-                                    </option>
-                                @endforeach
-                            </select>
+                            <label for="grupo">Grupo: {{ $grupo->nombre }}</label>
+                            <input type="hidden" name="grupo_id" id="grupo_id" value="{{ $grupo->id }}">
                         </div>
                         <div class="mb-4">
                             <label for="nombre" class="block text-gray-700">Nombre</label>

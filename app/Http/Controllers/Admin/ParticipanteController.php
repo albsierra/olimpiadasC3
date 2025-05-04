@@ -11,10 +11,10 @@ class ParticipanteController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Grupo $grupo)
     {
-        $participantes = Participante::all();
-        return view('admin.participantes.index', ['participantes' => $participantes]);
+        $participantes = $grupo->participantes()->with('grupo')->get();
+        return view('admin.participantes.index', compact('participantes', 'grupo'));
     }
 
     /**
@@ -29,29 +29,27 @@ class ParticipanteController extends Controller
      * Show the form for creating a new resource.
      */
 
-    public function create()
+    public function create(Grupo $grupo)
     {
-        $grupos = Grupo::all();
-        return view('admin.participantes.create')->with('grupos', $grupos);
+        return view('admin.participantes.create', compact('grupo'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, Grupo $grupo)
     {
         $request->validate([
-            'grupo' => 'required|exists:grupos,id',
             'nombre' => 'required|max:100',
         ]);
 
-        Participante::create([
-            'grupo_id' => $request->grupo,
+        $grupo->participantes()->create([
             'nombre' => $request->nombre,
             'apellidos' => $request->apellidos,
+
         ]);
 
-        return redirect()->route('participantes.index')->with('success', 'Participante creado correctamente.');
+        return redirect()->route('grupos.participantes.index', ['grupo' => $grupo])->with('success', 'Participante creado correctamente.');
     }
 
     /**
@@ -60,8 +58,8 @@ class ParticipanteController extends Controller
 
     public function edit(Participante $participante)
     {
-        $grupos = Grupo::all();
-        return view('admin.participantes.edit', compact('participante', 'grupos'));
+        $grupo = $participante->grupo;
+        return view('admin.participantes.edit', compact('participante', 'grupo'));
     }
     /**
      * Update the specified resource in storage.
@@ -69,16 +67,15 @@ class ParticipanteController extends Controller
 
     public function update(Request $request, Participante $participante){
         $request->validate([
-            'grupo' => 'required|exists:grupos,id',
             'nombre' => 'required|max:100',
         ]);
 
-        $participante->grupo_id = $request->grupo;
+        $grupo = $participante->grupo;
         $participante->nombre = $request->nombre;
         $participante->apellidos = $request->apellidos;
         $participante->save();
 
-        return redirect()->route('participantes.index')->with('success', 'Participante actualizado correctamente.');
+        return redirect()->route('grupos.participantes.index', ['grupo' => $grupo])->with('success', 'Participante actualizado correctamente.');
     }
 
     /**
@@ -87,8 +84,9 @@ class ParticipanteController extends Controller
 
     public function destroy(Participante $participante)
     {
+        $grupo = $participante->grupo;
         $participante->delete();
-        return redirect()->route('participantes.index')->with('success', 'Participante eliminado correctamente.');
+        return redirect()->route('grupos.participantes.index', ['grupo' => $grupo])->with('success', 'Participante eliminado correctamente.');
     }
 
 }

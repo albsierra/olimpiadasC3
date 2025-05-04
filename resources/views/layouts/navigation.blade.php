@@ -61,11 +61,6 @@
                         {{ __('Grupos') }}
                     </x-nav-link>
                 </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('participantes.index')" :active="request()->routeIs('participantes.index')">
-                        {{ __('Participantes') }}
-                    </x-nav-link>
-                </div>
             </div>
 
             <!-- Settings Dropdown -->

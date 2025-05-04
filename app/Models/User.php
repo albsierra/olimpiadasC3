@@ -50,4 +50,9 @@ class User extends Authenticatable
     {
         return $this->email === env('ADMIN_EMAIL');
     }
+
+    public function isTutor(Grupo $grupo)
+    {
+        return $this->id === $grupo->tutor;
+    }
 }

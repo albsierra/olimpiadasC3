@@ -48,7 +48,7 @@
                                 </tr>
                                 <tr>
                                     <td class="border px-4 py-2" colspan="3">
-                                        <a href="{{ route('grupos.show', $grupo) }}" class="btn btn-sm btn-primary">Ver Estudiantes</a>
+                                        <a href="{{ route('grupos.participantes.index', ['grupo' => $grupo]) }}" class="btn btn-sm btn-primary">Ver Estudiantes</a>
                                     </td>
                                 </tr>
                             @endforeach
