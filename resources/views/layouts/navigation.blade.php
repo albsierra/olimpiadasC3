@@ -16,51 +16,69 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
+                @can('viewAny', Ciclo::class)
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('ciclos.index')" :active="request()->routeIs('ciclos.index')">
                         {{ __('Ciclos') }}
                     </x-nav-link>
                 </div>
+                @endcan
+                @can('viewAny', Patrocinador::class)
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('patrocinadores.index')" :active="request()->routeIs('patrocinadores.index')">
                         {{ __('Patrocinadores') }}
                     </x-nav-link>
                 </div>
+                @endcan
+                @can('viewAny', Prueba::class)
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('pruebas.index')" :active="request()->routeIs('pruebas.index')">
                         {{ __('Pruebas') }}
                     </x-nav-link>
                 </div>
+                @endcan
+                @can('viewAny', Categoria::class)
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('categorias.index')" :active="request()->routeIs('categorias.index')">
                         {{ __('Categorias') }}
                     </x-nav-link>
                 </div>
+                @endcan
+                @can('viewAny', Edicion::class)
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('ediciones.index')" :active="request()->routeIs('ediciones.index')">
                         {{ __('Ediciones') }}
                     </x-nav-link>
                 </div>
+                @endcan
+                @can('viewAny', Resultado::class)
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('resultados.index')" :active="request()->routeIs('resultados.index')">
                         {{ __('Resultados') }}
                     </x-nav-link>
                 </div>
+                @endcan
+                @can('viewAny', Centro::class)
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('centros.index')" :active="request()->routeIs('centros.index')">
                         {{ __('Centros') }}
                     </x-nav-link>
                 </div>
+                @endcan
+                @can('viewAny', Grado::class)
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('grados.index')" :active="request()->routeIs('grados.index')">
                         {{ __('Grados') }}
                     </x-nav-link>
                 </div>
+                @endcan
+                @can('viewAny', Grupo::class)
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('grupos.index')" :active="request()->routeIs('grupos.index')">
                         {{ __('Grupos') }}
                     </x-nav-link>
                 </div>
+                @endcan
             </div>
 
             <!-- Settings Dropdown -->

@@ -18,7 +18,7 @@ class InscripcionConfirmada extends Mailable
      * Create a new message instance.
      * @param array $inscripcion
      */
-    public function __construct(public $inscripcion)
+    public function __construct(public $inscripcion, public $password)
     {
     }
 

@@ -13,6 +13,7 @@ class ParticipanteController extends Controller
      */
     public function index(Grupo $grupo)
     {
+        $this->authorize('view', $grupo);
         $participantes = $grupo->participantes()->with('grupo')->get();
         return view('admin.participantes.index', compact('participantes', 'grupo'));
     }
@@ -22,6 +23,7 @@ class ParticipanteController extends Controller
      */
     public function show(Participante $participante)
     {
+        $this->authorize('view', $participante->grupo);
         return view('admin.participantes.show', compact('participante'));
     }
 
@@ -31,6 +33,7 @@ class ParticipanteController extends Controller
 
     public function create(Grupo $grupo)
     {
+        $this->authorize('update', $grupo);
         return view('admin.participantes.create', compact('grupo'));
     }
 
@@ -39,6 +42,7 @@ class ParticipanteController extends Controller
      */
     public function store(Request $request, Grupo $grupo)
     {
+        $this->authorize('update', $grupo);
         $request->validate([
             'nombre' => 'required|max:100',
         ]);
@@ -59,6 +63,7 @@ class ParticipanteController extends Controller
     public function edit(Participante $participante)
     {
         $grupo = $participante->grupo;
+        $this->authorize('update', $grupo);
         return view('admin.participantes.edit', compact('participante', 'grupo'));
     }
     /**
@@ -71,6 +76,7 @@ class ParticipanteController extends Controller
         ]);
 
         $grupo = $participante->grupo;
+        $this->authorize('update', $grupo);
         $participante->nombre = $request->nombre;
         $participante->apellidos = $request->apellidos;
         $participante->save();
@@ -85,6 +91,7 @@ class ParticipanteController extends Controller
     public function destroy(Participante $participante)
     {
         $grupo = $participante->grupo;
+        $this->authorize('update', $grupo);
         $participante->delete();
         return redirect()->route('grupos.participantes.index', ['grupo' => $grupo])->with('success', 'Participante eliminado correctamente.');
     }

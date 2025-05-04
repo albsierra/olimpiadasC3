@@ -51,8 +51,10 @@ class User extends Authenticatable
         return $this->email === env('ADMIN_EMAIL');
     }
 
-    public function isTutor(Grupo $grupo)
+    public function isTutor($grupo = null)
     {
-        return $this->id === $grupo->tutor;
+        return isset($grupo)
+            ? ($this->id === $grupo->tutor)
+            : (Grupo::where('tutor', $this->id)->exists());
     }
 }

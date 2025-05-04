@@ -4,10 +4,30 @@ namespace App\Providers;
 
 // use Illuminate\Support\Facades\Gate;
 
+use App\Models\Categoria;
+use App\Models\Centro;
+use App\Models\Ciclo;
 use App\Models\Edicion;
+use App\Models\Grado;
+use App\Models\Grupo;
+use App\Models\Participante;
+use App\Models\Patrocinador;
+use App\Models\Prueba;
+use App\Models\Resultado;
 use App\Models\User;
+use App\Policies\CategoriaPolicy;
+use App\Policies\CentroPolicy;
+use App\Policies\CicloPolicy;
+use App\Policies\EdicionPolicy;
+use App\Policies\GradoPolicy;
+use App\Policies\GrupoPolicy;
+use App\Policies\ParticipantePolicy;
+use App\Policies\PatrocinadorPolicy;
+use App\Policies\PruebaPolicy;
+use App\Policies\ResultadoPolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
+use LDAP\Result;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -17,7 +37,15 @@ class AuthServiceProvider extends ServiceProvider
      * @var array<class-string, class-string>
      */
     protected $policies = [
-        //
+        Categoria::class => CategoriaPolicy::class,
+        Centro::class => CentroPolicy::class,
+        Ciclo::class => CicloPolicy::class,
+        Edicion::class => EdicionPolicy::class,
+        Grado::class => GradoPolicy::class,
+        Grupo::class => GrupoPolicy::class,
+        Patrocinador::class => PatrocinadorPolicy::class,
+        Prueba::class => PruebaPolicy::class,
+        Resultado::class => ResultadoPolicy::class,
     ];
 
     /**

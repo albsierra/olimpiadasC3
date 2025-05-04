@@ -4,15 +4,25 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Grupo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class GrupoController extends Controller
 {
+    /**
+     * Create the controller instance.
+    */
+    public function __construct()
+
+    {
+        $this->authorizeResource(Grupo::class, 'grupo');
+    }
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $grupos = Grupo::all();
+        $grupos = Auth::user()->isAdmin() ? Grupo::all() : Grupo::where('tutor', Auth::id())->get();
         return view('admin.grupos.index', ['grupos' => $grupos]);
     }
 
