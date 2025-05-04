@@ -33,9 +33,9 @@
             con su cuenta de correo electrónico y la contraseña
             @if (@isset($password))
                 <strong>{{ $password }}</strong>
-            @endif
-                que recibió en el primer correo de inscripción.
             @else
+                que recibió en el primer correo de inscripción.
+            @endif
             </p>
         <p>Gracias por participar en las Olimpiadas Informáticas.</p>
 
