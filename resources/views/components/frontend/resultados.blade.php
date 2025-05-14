@@ -6,7 +6,8 @@
         @if ($palmares)
             <div>{!! $palmares !!}</div> <!-- Mostrar el contenido HTML del atributo palmares -->
         @else
-            <p>No hay resultados disponibles para esta edición.</p>
+            <p>Resultado NO oficiales</p>
+            <x-resultados-olimpiadas />
         @endif
         </div>
     </section>

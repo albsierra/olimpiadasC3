@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Resultado extends Model
 {
@@ -51,5 +52,13 @@ class Resultado extends Model
         $html .= '</table>';
 
         return $html;
+    }
+
+    public static function getResultadosMoodle()
+    {
+        // Necesito hacer una consulta con una conexión distinta a la que Laravel tiene por defecto y hacer una consulta a una vista
+
+        $resultados = DB::connection('moodle')->table('resultadosolimpiadas')->get();
+        return $resultados;
     }
 }

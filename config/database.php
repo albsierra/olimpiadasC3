@@ -93,6 +93,32 @@ return [
             // 'trust_server_certificate' => env('DB_TRUST_SERVER_CERTIFICATE', 'false'),
         ],
 
+        'moodle' => [
+            'driver' => 'mysql',
+            'url' => env('MOODLE_DATABASE_URL'),
+            'host' => env('MOODLE_DB_HOST', '127.0.0.1'),
+            'port' => env('MOODLE_DB_PORT', '3306'),
+            'database' => env('MOODLE_DB_DATABASE', 'forge'),
+            'username' => env('MOODLE_DB_USER', 'forge'),
+            'password' => env('MOODLE_DB_PASSWORD', ''),
+            'unix_socket' => env('MOODLE_DB_SOCKET', ''),
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => '',
+            'prefix_indexes' => true,
+            'strict' => true,
+            'engine' => null,
+            'options' => extension_loaded('pdo_mysql') ? array_filter([
+                PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
+            ]) : [],
+            'modes' => [
+                'NO_ZERO_IN_DATE',
+                'NO_ZERO_DATE',
+                'ERROR_FOR_DIVISION_BY_ZERO',
+                'NO_ENGINE_SUBSTITUTION',
+            ],
+        ]
+
     ],
 
     /*
