@@ -18,6 +18,6 @@ class Ciclo extends Model
 
     public function grado()
     {
-        return $this->belongsTo(Grado::class, 'grado_id');
+        return $this->belongsTo(Grado::class, 'grado_id', 'id');
     }
 }

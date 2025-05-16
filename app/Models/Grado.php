@@ -13,4 +13,9 @@ class Grado extends Model
         'id',
         'nombre',
     ];
+
+    public function ciclos()
+    {
+        return $this->hasMany(Ciclo::class, 'grado_id', 'id');
+    }
 }

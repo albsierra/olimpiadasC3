@@ -30,6 +30,9 @@
                                             <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
                                         </form>
                                     </td>
+                                    <td class="border px-4 py-2">
+                                        <a href="{{ route('grados.ciclos.index', ['grado' => $grado]) }}" class="btn btn-sm btn-primary">Ver Ciclos</a>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
