@@ -14,7 +14,7 @@ class CicloController extends Controller
      */
     public function index(Grado $grado)
     {
-        $ciclos = $grado->ciclos()->with('grado')->get();
+        $ciclos = $grado->ciclos;
         return view('admin.ciclos.index', compact('ciclos', 'grado'));
     }
 
