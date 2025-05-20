@@ -43,7 +43,7 @@ Route::prefix('/dashboard')->middleware(['auth', 'verified'])->group(function ()
     })->name('dashboard');
     Route::resource('categorias', CategoriaController::class);
     Route::resource('centros', CentroController::class);
-    Route::resource('ciclos', CicloController::class);
+    Route::resource('grados.ciclos', CicloController::class)->shallow();
     Route::resource('ediciones', EdicionController::class)
         ->parameters(['ediciones' => 'edicion']);
     Route::resource('resultados', ResultadoController::class);

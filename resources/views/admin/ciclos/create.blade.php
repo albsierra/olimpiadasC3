@@ -11,7 +11,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     @include('partials.alerts')
-                    <form action="{{ route('ciclos.store') }}" method="POST">
+                    <form action="{{ route('grados.ciclos.store', ['grado' => $grado]) }}" method="POST">
                         @csrf
                         <div class="mb-4">
                             <label for="codigo" class="block text-gray-700">Código</label>
@@ -20,18 +20,6 @@
                         <div class="mb-4">
                             <label for="nombre" class="block text-gray-700">Nombre</label>
                             <input type="text" name="nombre" id="nombre" value="{{ old('nombre') }}" class="w-full border-gray-300 rounded-md">
-                        </div>
-                        <div class="mb-4">
-                            <label for="grado_id" class="block text-gray-700">Grado</label>
-                            <select name="grado_id" id="grado_id" class="w-full border-gray-300 rounded-md">
-                                @foreach ($grados as $grado)
-                                    <option value="{{ $grado->id }}">
-                                        {{ $grado->nombre }}
-                                    </option>
-                                @endforeach
-                            </select>
-                            <!--<input type="text" name="grado_id" id="grado_id" value="{{ old('grado_id') }}" class="w-full border-gray-300 rounded-md">
-                            -->
                         </div>
                         <input type="submit" class="primary" value="Guardar"/>
                     </form>

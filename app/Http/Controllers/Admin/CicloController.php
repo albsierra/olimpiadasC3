@@ -6,47 +6,48 @@ use App\Http\Controllers\Controller;
 use App\Models\Ciclo;
 use App\Models\Grado;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 
 class CicloController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Grado $grado)
     {
-        $ciclos = Ciclo::all();
-        $grados = Grado::all();
-        return view('admin.ciclos.index', compact('ciclos', 'grados'));
+        $ciclos = $grado->ciclos;
+        return view('admin.ciclos.index', compact('ciclos', 'grado'));
     }
 
-    public function create()
+    public function create(Grado $grado)
     {
-        $grados = Grado::all();
-        return view('admin.ciclos.create', compact('grados'));
+        return view('admin.ciclos.create', compact('grado'));
     }
 
-    public function store(Request $request)
+    public function show(Ciclo $ciclo)
+    {
+        return view('admin.ciclos.show', compact('ciclo'));
+    }
+
+    public function store(Request $request, Grado $grado)
     {
         $request->validate([
             'codigo' => 'required|max:10',
             'nombre' => 'required|max:100',
-            'grado_id' => 'required|exists:grados,id',
         ]);
 
-        Ciclo::create([
+        $grado->ciclos()->create([
             'codigo' => $request->codigo,
             'nombre' => $request->nombre,
-            'grado_id' => $request->grado_id,
+            'grado_id' => $grado->id,
         ]);
 
-        return redirect()->route('ciclos.index')->with('success', 'Ciclo creado correctamente.');
+        return redirect()->route('grados.ciclos.index', ['grado' => $grado])->with('success', 'Ciclo creado correctamente.');
     }
 
     public function edit(Ciclo $ciclo)
     {
-        $grados = Grado::all();
-        return view('admin.ciclos.edit', compact('ciclo', 'grados'));
+        $grado = $ciclo->grado;
+        return view('admin.ciclos.edit', compact('ciclo', 'grado'));
     }
 
     public function update(Request $request, Ciclo $ciclo)
@@ -54,21 +55,22 @@ class CicloController extends Controller
         $request->validate([
             'codigo' => 'required|max:10',
             'nombre' => 'required|max:100',
-            'grado_id' => 'required|exists:grados,id',
         ]);
 
+        $grado = $ciclo->grado;
         $ciclo->codigo = $request->codigo;
         $ciclo->nombre = $request->nombre;
-        $ciclo->grado_id = $request->grado_id;
+        $ciclo->grado_id = $grado->id;
         $ciclo->save();
 
-        return redirect()->route('ciclos.index')->with('success', 'Ciclo actualizado correctamente.');
+        return redirect()->route('grados.ciclos.index', ['grado' => $grado])->with('success', 'Ciclo actualizado correctamente.');
     }
 
     public function destroy(Ciclo $ciclo)
     {
+        $grado = $ciclo->grado;
         $ciclo->delete();
 
-        return redirect()->route('ciclos.index')->with('success', 'Ciclo eliminado correctamente.');
+        return redirect()->route('grados.ciclos.index', ['grado' => $grado])->with('success', 'Ciclo eliminado correctamente.');
     }
 }

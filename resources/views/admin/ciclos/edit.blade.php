@@ -22,16 +22,7 @@
                             <input type="text" name="nombre" id="nombre" value="{{ old('nombre') ?? $ciclo->nombre }}" class="w-full border-gray-300 rounded-md">
                         </div>
                         <div class="mb-4">
-                            <label for="grado_id" class="block text-gray-700">Grado</label>
-                            <select name="grado_id" id="grado_id" class="w-full border-gray-300 rounded-md">
-                                @foreach ($grados as $grado)
-                                    <option value="{{ $grado->id }}">
-                                        {{ $grado->nombre }}
-                                    </option>
-                                @endforeach
-                            </select>
-                            <!-- <input type="text" name="grado_id" id="grado_id" value="{{ old('grado_id') ?? $ciclo->grado_id }}" class="w-full border-gray-300 rounded-md">
-                            -->
+                            <label for="grado_id" class="block text-gray-700">Grado: {{ $grado->nombre }}</label>
                         </div>
                         <input type="submit" class="primary" value="Guardar"/>
                     </form>

@@ -18,13 +18,6 @@
                     </x-nav-link>
                 </div>
                 -->
-                @can('viewAny', App\Models\Ciclo::class)
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('ciclos.index')" :active="request()->routeIs('ciclos.index')">
-                        {{ __('Ciclos') }}
-                    </x-nav-link>
-                </div>
-                @endcan
                 @can('viewAny', App\Models\Patrocinador::class)
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('patrocinadores.index')" :active="request()->routeIs('patrocinadores.index')">
