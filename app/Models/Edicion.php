@@ -44,6 +44,11 @@ class Edicion extends Model
                     ->withPivot('num_convocatoria');
     }
 
+    public function grupos()
+    {
+        return $this->belongsToMany(Grupo::class, 'edicion_grupo');
+    }
+
 }
 
 //faltan añadir las relaciones entre tablas

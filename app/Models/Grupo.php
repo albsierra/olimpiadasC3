@@ -38,5 +38,9 @@ class Grupo extends Model
     {
         return $this->hasMany(Participante::class);
     }
+    public function edicion()
+    {
+        return $this->belongsToMany(Edicion::class, 'edicion_grupo')->first();
+    }
 
 }
