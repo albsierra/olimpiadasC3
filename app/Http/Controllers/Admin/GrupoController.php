@@ -26,7 +26,10 @@ class GrupoController extends Controller
      */
     public function index()
     {
-        $grupos = Auth::user()->isAdmin() ? Grupo::all() : Grupo::where('tutor', Auth::id())->get();
+        $edicionActual = \App\Models\Edicion::getEdicionActual();
+        $grupos = Auth::user()->isAdmin()
+            ? $edicionActual->grupos
+            : $edicionActual->grupos()->where('tutor', Auth::id())->get();
         return view('admin.grupos.index', ['grupos' => $grupos]);
     }
 
@@ -107,8 +110,9 @@ class GrupoController extends Controller
 
     public function crearUsuariosMoodle()
     {
+        $edicionActual = \App\Models\Edicion::getEdicionActual();
         $redirect = redirect()->route('grupos.index');
-        $resultado = $this->moodleService->createUsersFromGrupos(Grupo::all());
+        $resultado = $this->moodleService->createUsersFromGrupos($edicionActual->grupos);
         $redirect = $this->getWith($redirect, $resultado);
         return $redirect;
     }

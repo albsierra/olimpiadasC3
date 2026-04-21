@@ -3,6 +3,7 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Grupos') }}
         </h2>
+        <x-select-edicion />
     </x-slot>
 
     <div class="py-12">
