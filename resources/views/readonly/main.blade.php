@@ -45,13 +45,18 @@
                         </section>
 
                     <!-- Horario -->
+                    @php
+                    $horarioPath = 'storage/ediciones/edicion' . \App\Models\Edicion::getEdicionActual()->id . '/agendaOlimpica.png';
+                    @endphp
+                    @if (file_exists(public_path($horarioPath)))
                     <section id="horario">
                         <div class="container">
                             <h3>Horario</h3>
-                            <img src="{{ asset('images/agendaOlimpica.jpeg') }}"
+                            <img src="{{ asset($horarioPath) }}"
                             alt="Agenda Olímpica" class="agenda-olimpica">
                         </div>
                     </section>
+                    @endif
 
                     <!-- Four -->
                         <section id="resultados">
