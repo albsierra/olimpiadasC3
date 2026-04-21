@@ -5,9 +5,9 @@
     <div class="row gtr-uniform">
         <div class="col-12"><input type="checkbox" name="terminos" id="terminos" required><label for="terminos">Hemos leído y aceptado las bases</label>
             <ul>
-                <li><a href="{{ asset('/ediciones/edicion2025/basesOlimpiada.pdf') }}" download >Bases de la Olimpiada Informática</a></li>
-                <li><a href="{{ asset('/ediciones/edicion2025/basesModding.pdf') }}" download >Bases del Modding Regional</a></li>
-                <li><a href="{{ asset('/ediciones/edicion2025/basesC3Gamer.pdf') }}" download >Bases del C3Gamer</a></li>
+                <li><a href="{{ asset('/ediciones/edicion' . \App\Models\Edicion::getEdicionActual()->id . '/basesOlimpiada.pdf') }}" download >Bases de la Olimpiada Informática</a></li>
+                <li><a href="{{ asset('/ediciones/edicion' . \App\Models\Edicion::getEdicionActual()->id . '/basesModding.pdf') }}" download >Bases del Modding Regional</a></li>
+                <li><a href="{{ asset('/ediciones/edicion' . \App\Models\Edicion::getEdicionActual()->id . '/basesC3Gamer.pdf') }}" download >Bases del C3Gamer</a></li>
             </ul>
         </div>
         <x-inscripciones.select-centro />

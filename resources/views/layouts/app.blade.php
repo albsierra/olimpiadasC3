@@ -11,7 +11,7 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
-		<link rel="stylesheet" href="{{ asset('/ediciones/edicion2025/main.css') }}" />
+		<link rel="stylesheet" href="{{ asset('/ediciones/edicion' . \App\Models\Edicion::getEdicionActual()->id . '/main.css') }}" />
         <!-- Scripts -->
         <x-tinymce.config/>
         @vite(['resources/css/app.css', 'resources/js/app.js'])
