@@ -23,11 +23,11 @@
                         </div>
                         <div class="mb-4">
                             <label for="fecha_apertura" class="block text-gray-700">Fecha Apertura</label>
-                            <input type="date" name="fecha_apertura" id="fecha_apertura" value="{{ old('fecha_apertura') ?? $edicion->fecha_apertura }}" class="w-full border-gray-300 rounded-md">
+                            <input type="datetime-local" name="fecha_apertura" id="fecha_apertura" value="{{ old('fecha_apertura') ?? $edicion->fecha_apertura }}" class="w-full border-gray-300 rounded-md">
                         </div>
                         <div class="mb-4">
                             <label for="fecha_cierre" class="block text-gray-700">Fecha Cierre</label>
-                            <input type="date" name="fecha_cierre" id="fecha_cierre" value="{{ old('fecha_cierre') ?? $edicion->fecha_cierre }}" class="w-full border-gray-300 rounded-md">
+                            <input type="datetime-local" name="fecha_cierre" id="fecha_cierre" value="{{ old('fecha_cierre') ?? $edicion->fecha_cierre }}" class="w-full border-gray-300 rounded-md">
                         </div>
                         <div class="mb-4">
                             <label for="css_file" class="block text-gray-700">File CSS</label>
