@@ -57,4 +57,5 @@
             </div>
         </div>
     </div>
+    @include('admin.ediciones._files', ['edicion' => $edicion])
 </x-app-layout>
