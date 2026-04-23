@@ -21,6 +21,11 @@
     <p>La siguiente es la relación de cursos en las que se han publicado los ejercicios de las últimas ediciones:</p>
     <ul>
         <li class="icon solid">
+            <a href="https://cifpcarlos3.net/codeweek/course/view.php?id=13" target="_blank">
+                <h4><b>XVI Olimpiadas</b> (Curso 2024-2025)</h4>
+            </a>
+        </li>
+        <li class="icon solid">
             <a href="https://cifpcarlos3.net/codeweek/course/view.php?id=10" target="_blank">
                 <h4><b>XV Olimpiadas</b> (Curso 2023-2024)</h4>
             </a>
