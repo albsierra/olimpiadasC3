@@ -15,7 +15,6 @@ return new class extends Migration
             $table->foreignId('edicion_id')->constrained('ediciones')->onDelete('cascade');
             $table->foreignId('grupo_id')->constrained()->onDelete('cascade');
             $table->primary('grupo_id');
-            $table->timestamps();
         });
     }
 

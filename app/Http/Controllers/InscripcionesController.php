@@ -84,6 +84,9 @@ class InscripcionesController extends Controller
             'categoria_id' => $request->categoria,
         ]);
 
+        $edicionActual = \App\Models\Edicion::getEdicionActual();
+        $edicionActual->grupos()->attach($grupo->id);
+
         // Crear los participantes
         $alumnos = [];
         foreach ($request->nombre as $key => $nombre) {
