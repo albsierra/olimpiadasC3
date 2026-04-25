@@ -28,9 +28,9 @@ class GrupoController extends Controller
     {
         $edicionActual = \App\Models\Edicion::getEdicionActual();
         $grupos = Auth::user()->isAdmin()
-            ? $edicionActual->grupos
-            : $edicionActual->grupos()->where('tutor', Auth::id())->get();
-        return view('admin.grupos.index', ['grupos' => $grupos]);
+            ? $edicionActual->grupos()
+            : $edicionActual->grupos()->where('tutor', Auth::id());
+        return view('admin.grupos.index', ['grupos' => $grupos->get()]);
     }
 
     /**

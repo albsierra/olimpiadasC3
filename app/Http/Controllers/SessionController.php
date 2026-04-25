@@ -11,6 +11,6 @@ class SessionController extends Controller
     {
         $edicion = Edicion::findOrFail($request->input('edicion_id'));
         session(['edicion' => $edicion]);
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Edición seleccionada: ' . $edicion->nombre);
     }
 }
