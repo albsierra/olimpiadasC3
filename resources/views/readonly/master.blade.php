@@ -20,11 +20,17 @@
 	</head>
 	<body class="is-preload">
         <!-- Header -->
-        @include('readonly.header')
+        @yield('header')
 		<!-- Wrapper -->
         <div id="wrapper">
             <!-- Main -->
-            @include('readonly.main')
+                <div id="main">
+                    <div class="image main" data-position="center">
+                        <img src="{{ asset('storage/ediciones/edicion' . \App\Models\Edicion::getEdicionActual()->id . '/banner.png') }}" alt="" />
+                    </div>
+
+                    @yield('content')
+                </div>
             <!-- Footer -->
             @include('readonly.footer')
         </div>

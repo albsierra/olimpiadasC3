@@ -93,6 +93,19 @@ return [
             // 'trust_server_certificate' => env('DB_TRUST_SERVER_CERTIFICATE', 'false'),
         ],
 
+        'olimpiadas' => [
+            'driver'    => 'mysql',
+            'host'      => env('DB_OLIMPIADAS_HOST', '127.0.0.1'),
+            'port'      => env('DB_OLIMPIADAS_PORT', '3306'),
+            'database'  => env('DB_OLIMPIADAS_DATABASE'),
+            'username'  => env('DB_OLIMPIADAS_USERNAME'),
+            'password'  => env('DB_OLIMPIADAS_PASSWORD'),
+            'charset'   => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix'    => '',
+            'strict'    => false,
+        ],
+
     ],
 
     /*
