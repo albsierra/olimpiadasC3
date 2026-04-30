@@ -1,12 +1,7 @@
 
-            <!-- Main -->
-                <div id="main">
 
                     <!-- One -->
                         <section id="objetivos">
-                            <div class="image main" data-position="center">
-                                <img src="{{ asset('storage/ediciones/edicion' . \App\Models\Edicion::getEdicionActual()->id . '/banner.png') }}" alt="" />
-                            </div>
                             <div class="container">
                                 <h3>Objetivos</h3>
                                 <p>Las Olimpiada Informáticas de la Región de Murcia para los Institutos de Educación Secundaria y
@@ -72,4 +67,3 @@
                             <section id="ejercicios_ediciones_anteriores">
                                     @include('partials.frontend.ejercicios_ediciones_anteriores')
                             </section>
-                </div>

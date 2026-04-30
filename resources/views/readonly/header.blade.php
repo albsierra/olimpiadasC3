@@ -2,18 +2,22 @@
         <section id="header">
             <header>
                 <span class="image avatar"><img src="{{ asset('/images/logoC3.png') }}" alt="" /></span>
-                <h1 id="logo"><a href="#">Olimpiadas Informáticas Región de Murcia</a></h1>
+                <h1 id="logo"><a href="/">Olimpiadas Informáticas Región de Murcia</a></h1>
                 <!-- <p>Organiza: CIFP Carlos III</p> -->
             </header>
             <nav id="nav">
                 <ul>
-                    <li><a href="#objetivos" class="active">Objetivos</a></li>
-                    <li><a href="#categorias">Categorìas</a></li>
-                    <li><a href="#inscripciones">Inscripciones</a></li>
-                    <li><a href="#horario">Horario</a></li>
-                    <li><a href="#resultados">Resultados</a></li>
-                    <li><a href="#patrocinadores">Patrocinadores</a></li>
-                    <li><a href="#ejercicios_ediciones_anteriores">Ejercicios propuestos</a></li>
+                    <li><a href="/#objetivos" class="active">Objetivos</a></li>
+                    <li><a href="/#categorias">Categorìas</a></li>
+                    <li><a href="/#inscripciones">Inscripciones</a></li>
+                    <li><a href="/#horario">Horario</a></li>
+                    <li><a href="/#resultados">Resultados</a>
+                        @if (\Illuminate\Support\Carbon::now()->isSameDay(\App\Models\Edicion::getEdicionActual()->fecha_celebracion))
+                            <a href="/resultados_live"> (en vivo)</a>
+                        @endif
+                    </li>
+                    <li><a href="/#patrocinadores">Patrocinadores</a></li>
+                    <li><a href="/#ejercicios_ediciones_anteriores">Ejercicios propuestos</a></li>
                     <li><a href="/dashboard">Admin</a></li>
                 </ul>
             </nav>
