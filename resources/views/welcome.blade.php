@@ -9,5 +9,6 @@
 @endsection
 
 @section('scripts')
-        @include('partials.frontend.scripts')
+        @parent
+			<script src="{{ asset('js/inscripciones.js') }}"></script>
 @endsection
