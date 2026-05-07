@@ -21,9 +21,16 @@ class SelectCategoria extends Component
      */
     public function render(): View|Closure|string
     {
-        $categorias = \App\Models\Categoria
-            ::orderBy('id', 'asc')
-            ->get();
+        $edicionActual = \App\Models\Edicion::getEdicionActual();
+
+        $categorias = \App\Models\Categoria::orderBy('id', 'asc')->get();
+
+        $categorias->each(function ($categoria) use ($edicionActual) {
+            if (str_contains($categoria->nombre, 'Olimpiada')) {
+                $categoria->numInscritos = $categoria->gruposInEdicionCount($edicionActual);
+            }
+        });
+
         return view('components.inscripciones.select-categoria', [
             'categorias' => $categorias,
             'oldValue' => old('categoria'),

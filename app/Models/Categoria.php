@@ -54,4 +54,19 @@ class Categoria extends Model
         }
         return $returnValue;
     }
+
+    public function gruposInEdicionCount(Edicion $edicion)
+    {
+        $edicionId = $edicion ? $edicion->id : Edicion::getEdicionActual()->id;
+
+        return $this->grupos()
+            ->join('edicion_grupo', 'edicion_grupo.grupo_id', '=', 'grupos.id')
+            ->where('edicion_grupo.edicion_id', $edicionId)
+            ->count();
+    }
+
+    public function grupos()
+    {
+        return $this->hasMany(Grupo::class);
+    }
 }
