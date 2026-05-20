@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+        @include('partials.frontend.banner')
         @include('readonly.main')
 @endsection
 
